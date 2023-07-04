@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;600;700&family=Rubik:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500:600;700&family=Poppins:wght@400;600;700&family=Rubik:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <title>Portfolio</title>
@@ -18,21 +18,145 @@
         padding: 0;
         box-sizing: border-box;
       }
-      header {
+      body {
         font-family: "Poppins", sans-serif;
+        color: #212529;
+      }
+      /* Test */
+      html {
+        --s: 100px; /* control the size */
+        --c1: #c3ccaf;
+        --c2: #67434f;
+
+        --_s: calc(2 * var(--s)) calc(2 * var(--s));
+        --_g: var(--_s) conic-gradient(at 40% 40%, #0000 75%, var(--c1) 0);
+        --_p: var(--_s) conic-gradient(at 20% 20%, #0000 75%, var(--c2) 0);
+        background: calc(0.9 * var(--s)) calc(0.9 * var(--s)) / var(--_p),
+          calc(-0.1 * var(--s)) calc(-0.1 * var(--s)) / var(--_p),
+          calc(0.7 * var(--s)) calc(0.7 * var(--s)) / var(--_g),
+          calc(-0.3 * var(--s)) calc(-0.3 * var(--s)) / var(--_g),
+          conic-gradient(from 90deg at 20% 20%, var(--c2) 25%, var(--c1) 0) 0 0 /
+            var(--s) var(--s);
+        animation: m 3s infinite;
+      }
+      @keyframes m {
+        0% {
+          background-position: calc(0.9 * var(--s)) calc(0.9 * var(--s)),
+            calc(-0.1 * var(--s)) calc(-0.1 * var(--s)),
+            calc(0.7 * var(--s)) calc(0.7 * var(--s)),
+            calc(-0.3 * var(--s)) calc(-0.3 * var(--s)), 0 0;
+        }
+        25% {
+          background-position: calc(1.9 * var(--s)) calc(0.9 * var(--s)),
+            calc(-1.1 * var(--s)) calc(-0.1 * var(--s)),
+            calc(1.7 * var(--s)) calc(0.7 * var(--s)),
+            calc(-1.3 * var(--s)) calc(-0.3 * var(--s)), 0 0;
+        }
+        50% {
+          background-position: calc(1.9 * var(--s)) calc(-0.1 * var(--s)),
+            calc(-1.1 * var(--s)) calc(0.9 * var(--s)),
+            calc(1.7 * var(--s)) calc(-0.3 * var(--s)),
+            calc(-1.3 * var(--s)) calc(0.7 * var(--s)), 0 0;
+        }
+        75% {
+          background-position: calc(2.9 * var(--s)) calc(-0.1 * var(--s)),
+            calc(-2.1 * var(--s)) calc(0.9 * var(--s)),
+            calc(2.7 * var(--s)) calc(-0.3 * var(--s)),
+            calc(-2.3 * var(--s)) calc(0.7 * var(--s)), 0 0;
+        }
+        100% {
+          background-position: calc(2.9 * var(--s)) calc(-1.1 * var(--s)),
+            calc(-2.1 * var(--s)) calc(1.9 * var(--s)),
+            calc(2.7 * var(--s)) calc(-1.3 * var(--s)),
+            calc(-2.3 * var(--s)) calc(1.7 * var(--s)), 0 0;
+        }
+      }
+      /* Head */
+      header {
+        text-align: center;
         font-size: 50px;
         font-weight: 600;
         letter-spacing: 1px;
         color: #424242;
+        margin-left: 10px;
+      }
+      .Head {
+        background-color: #868e96;
+        padding-bottom: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      a {
+        font-size: 25px;
+        font-weight: 600;
+        text-decoration: none;
+        margin-right: 25px;
+        padding: 6px 10px;
+        border-radius: 10px;
+      }
+
+      a:link,
+      a:visited {
+        color: #424242;
+        background-color: #d9d9d9;
+      }
+      a:hover {
+        background-color: #ececec;
+        box-shadow: 15px 15px 32px rgba(0, 0, 0, 0.177);
+      }
+      /* Body */
+      .about {
+        background-color: #adb5bd;
+        margin: 50px auto;
+        padding: 50px 50px;
+        width: 95%;
+        border-radius: 15px;
+        box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.232);
+      }
+      h1 {
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 1.3;
+        letter-spacing: 1.2px;
       }
     </style>
   </head>
   <body>
     <!-- Header -->
-    <header>Talal @TalalYaz1</header>
-    <nav></nav>
+    <div class="Head">
+      <header>Talal @TalalYaz1</header>
+      <div class="nav-bar">
+        <a href="#">Portfolio</a>
+        <a href="#">About me</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
     <main></main>
-    <section></section>
+    <section class="about">
+      <h1>About me</h1>
+      <p>
+        Hello, my name is Talal and I'll be giving a brief introduction about
+        who I am, what I want to learn, and what my hobby is. I am an
+        18-year-old living in the Camden borough of London. I attended St.
+        Augustine's School for the past 7 years, completing both my GCSEs and
+        BTECs during this time. I am of Middle Eastern and North African
+        descent.What i would like to do as a career is some form of technology
+        or web development i find it so interesting that all these lines of code
+        can compile together to develop the page interfaces that people use in
+        their day to day lives. i enrolled in the london vesta college
+        traineeship programme in order to further my coding knowledge and get
+        first hand experience in an actual work enviroment. my plan for the
+        future is to get some form of apprenticeship or entry level job into
+        this sector ill attempt to accomplish this via internships and
+        workexperiences that i will regularly enroll under.
+      </p>
+    </section>
     <article></article>
     <footer></footer>
   </body>
